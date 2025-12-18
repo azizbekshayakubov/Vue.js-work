@@ -1,10 +1,9 @@
 <template>
-    <h1>APP Info</h1>
+  <div class="app-info">
+    <p class="fs-3"></p>
+  </div>
 </template>
 
-<script>
-
- 
-</script>
+<script></script>
 
 <style></style>
