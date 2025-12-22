@@ -1,14 +1,33 @@
 <template>
-    <div>
-       <h1>MovieAddForm</h1>
-    </div>
-</template>
-<script>
-export default {
-    
-}
-</script>
-<style>
-    
+  <div class="movie-add-form">
+    <h3>Yangi kino qoshish</h3>
+    <form class="add-form d-flex">
+      <input
+        type="text"
+        class="form-control new-movie-label"
+        placeholder="Qanday kino?"
+      />
+      <input
+        type="text"
+        class="form-control new-movie-label"
+        placeholder="Nechi marotaba ko'rilagan?"
+      />
 
-</style>  
+      <button class="btn btn-outline-dark" type="submit">Qo'shish</button>
+    </form>
+  </div>
+</template>
+
+<script>
+  export default {};
+</script>
+
+<style>
+  .movie-add-form {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background-color: #fcfaf5;
+    box-shadow: 15px 15px 15px rgb(0, 0, 0, 0.15);
+  }
+</style>

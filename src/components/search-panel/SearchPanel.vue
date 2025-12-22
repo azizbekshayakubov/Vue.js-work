@@ -1,14 +1,19 @@
 <template>
-    <div>
-        <h1>Search panel</h1>
-    </div>
+  <input
+    type="text"
+    class="form-control search-input"
+    placeholder="Kinolarni qidirsh"
+  />
 </template>
 <script>
-export default {
-
-    
-}
+  export default {};
 </script>
 <style scoped>
-    
+  .search-input {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 4px;
+    background-color: #fcfaf5;
+    box-shadow: 15px 15px 15px rgb(0, 0, 0, 0.15);
+  }
 </style>
