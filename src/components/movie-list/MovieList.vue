@@ -9,29 +9,11 @@
 
   export default {
     components: { MovieListItem },
-    data() {
-      return {
-        movies: [
-          {
-            name: "Omar",
-            viewers: 811,
-            favourite: false,
-            like: true,
-          },
-          {
-            name: "Empire of osman",
-            viewers: 411,
-            favourite: false,
-            like: true,
-          },
-          {
-            name: "Ertaglu",
-            viewers: 411,
-            favourite: true,
-            like: false,
-          },
-        ],
-      };
+    props: {
+      movies: {
+        type: Array,
+        required: true,
+      },
     },
   };
 </script>
