@@ -9,7 +9,7 @@
         <SearchPanel />
         <AppFilter />
       </div>
-      <MovieList :movies="movies" @onLike="onLikeHandler" />
+      <MovieList :movies="movies" @onToggle="onToggleHandler" />
       <MovieAddForm @createMovie="createMovie" />
     </div>
   </div>
@@ -43,7 +43,7 @@
             name: "Empire of osman",
             viewers: 411,
             favourite: false,
-            like: true,
+            like: false,
             id: 2,
           },
 
@@ -58,7 +58,7 @@
             name: "Ertaglu",
             viewers: 411,
             favourite: false,
-            like: true,
+            like: false,
             id: 4,
           },
         ],
@@ -68,14 +68,16 @@
       createMovie(item) {
         this.movies.push(item);
       },
-      onLikeHandler(id) {
-        const arr = this.movies.filter((c) => c.id == id);
-        console.log(arr);
+      onToggleHandler({ id, prop }) {
+        const movie = this.movies.find((m) => m.id === id);
+        if (!movie) return;
+
+        movie[prop] = !movie[prop]; // prop = 'like' ёки 'favourite'
       },
     },
   };
 </script>
-
+y
 <style>
   .app {
     height: 100vh;
