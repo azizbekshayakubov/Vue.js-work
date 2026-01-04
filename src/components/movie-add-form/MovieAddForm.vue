@@ -1,7 +1,7 @@
 <template>
   <div class="movie-add-form">
     <h3>Yangi kino qoshish</h3>
-    <form class="add-form d-flex">
+    <form class="add-form d-flex" @submit.prevent>
       <input
         type="text"
         class="form-control new-movie-label"
@@ -16,7 +16,6 @@
         :value="viewers"
         @:input="viewers = $event.target.value"
       />
-
       <button class="btn btn-outline-dark" type="submit" @click="addMovie">
         Qo'shish
       </button>
@@ -40,8 +39,11 @@
           viewers: this.viewers,
           favourite: false,
           like: false,
+          id: Date.now(),
         };
-        console.log(newMovie);
+        this.$emit("createMovie", newMovie);
+        this.name = "";
+        this.viewers = "";
       },
     },
   };

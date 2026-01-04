@@ -9,8 +9,8 @@
         <SearchPanel />
         <AppFilter />
       </div>
-      <MovieList :movies="movies" />
-      <MovieAddForm />
+      <MovieList :movies="movies" @onLike="onLikeHandler" />
+      <MovieAddForm @createMovie="createMovie" />
     </div>
   </div>
 </template>
@@ -37,12 +37,14 @@
             viewers: 811,
             favourite: true,
             like: true,
+            id: 1,
           },
           {
             name: "Empire of osman",
             viewers: 411,
             favourite: false,
             like: true,
+            id: 2,
           },
 
           {
@@ -50,15 +52,26 @@
             viewers: 411,
             favourite: true,
             like: true,
+            id: 3,
           },
           {
             name: "Ertaglu",
             viewers: 411,
             favourite: false,
             like: true,
+            id: 4,
           },
         ],
       };
+    },
+    methods: {
+      createMovie(item) {
+        this.movies.push(item);
+      },
+      onLikeHandler(id) {
+        const arr = this.movies.filter((c) => c.id == id);
+        console.log(arr);
+      },
     },
   };
 </script>
